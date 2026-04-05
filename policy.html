@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal — Solo Operator OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --black:#0c0c0b;--white:#fafaf8;--off:#f0ede6;--mid:#e2ddd5;
+  --dim:#9a9488;--faint:#c8c3bb;--accent:#d4420c;--accent2:#f05228;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'Syne',sans-serif;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(250,250,248,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--mid);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 5vw;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;color:var(--black);display:flex;align-items:center;gap:0.6rem;}
+.logo-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;animation:pulse 2.5s ease infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.4);opacity:0.6;}}
+.nav-links{display:flex;gap:3rem;list-style:none;}
+.nav-links a{font-size:0.72rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--black);}
+.nav-cta{font-size:0.7rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;border:1px solid var(--black);padding:0.6rem 1.5rem;color:var(--black);text-decoration:none;transition:all 0.2s;}
+.nav-cta:hover{background:var(--black);color:var(--white);}
+.progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);z-index:400;width:0%;transition:width 0.1s linear;}
+.page-header{padding:10rem 5vw 5rem;border-bottom:1px solid var(--mid);}
+.page-header-inner{max-width:800px;}
+.page-label{font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:1.5rem;}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6vw,80px);font-weight:600;line-height:0.95;letter-spacing:-0.02em;margin-bottom:1.5rem;}
+.page-meta{font-size:0.8rem;color:var(--dim);letter-spacing:0.05em;}
+.toc{padding:3rem 5vw;border-bottom:1px solid var(--mid);background:var(--off);}
+.toc-inner{max-width:800px;}
+.toc-label{font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim);margin-bottom:1.25rem;}
+.toc-links{display:flex;flex-wrap:wrap;gap:0.75rem;list-style:none;}
+.toc-links a{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--black);text-decoration:none;padding:0.5rem 1rem;border:1px solid var(--mid);background:var(--white);transition:all 0.2s;}
+.toc-links a:hover{border-color:var(--accent);color:var(--accent);}
+.policy-wrap{padding:5rem 5vw;}
+.policy-inner{max-width:800px;display:flex;flex-direction:column;gap:5rem;}
+.section-tag{font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:1rem;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:600;line-height:1.05;letter-spacing:-0.01em;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--mid);}
+.policy-block{margin-bottom:2rem;}
+.policy-block h3{font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);margin-bottom:0.75rem;}
+.policy-block p{font-size:0.92rem;line-height:1.8;color:#3a3832;margin-bottom:0.75rem;}
+.policy-block ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem;}
+.policy-block ul li{font-size:0.9rem;line-height:1.7;color:#3a3832;padding-left:1.25rem;position:relative;}
+.policy-block ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:0.75rem;top:0.2rem;}
+.highlight-box{background:var(--off);border-left:3px solid var(--accent);padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.highlight-box p{font-size:0.88rem;line-height:1.7;color:var(--black);font-weight:500;}
+.section-divider{border:none;border-top:1px solid var(--mid);}
+.contact-band{background:var(--black);color:var(--white);padding:4rem 5vw;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.contact-band-label{font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:0.75rem;}
+.contact-band-title{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,36px);font-weight:600;}
+.contact-band-email{font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);text-decoration:none;border:1px solid rgba(255,255,255,0.3);padding:0.9rem 2rem;transition:all 0.2s;white-space:nowrap;}
+.contact-band-email:hover{background:var(--white);color:var(--black);}
+footer{display:flex;align-items:center;justify-content:space-between;padding:2rem 5vw;border-top:1px solid var(--mid);flex-wrap:wrap;gap:1rem;}
+.footer-l,.footer-r{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;}
+.footer-logo span{color:var(--accent);}
+a.policy-email{color:var(--accent);text-decoration:none;}
+a.policy-email:hover{text-decoration:underline;}
+@media(max-width:600px){.nav-links{display:none;}.contact-band{flex-direction:column;text-align:center;}}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span class="logo-dot"></span>Solo Operator OS</a>
+    <ul class="nav-links">
+      <li><a href="/#products">Products</a></li>
+      <li><a href="/#tools">Tools</a></li>
+      <li><a href="/#pricing">Pricing</a></li>
+    </ul>
+    <a href="https://solooperatoros.gumroad.com" class="nav-cta" target="_blank">Access Platform</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <span class="page-label">Legal</span>
+    <h1 class="page-title">Terms, Privacy<br>&amp; Refunds</h1>
+    <p class="page-meta">Last updated: April 2026 &nbsp;&middot;&nbsp; Solo Operator OS &nbsp;&middot;&nbsp; Governing law: Connecticut, USA</p>
+  </div>
+</header>
+
+<div class="toc">
+  <div class="toc-inner">
+    <p class="toc-label">Jump to</p>
+    <ul class="toc-links">
+      <li><a href="#terms">Terms of Service</a></li>
+      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="#refunds">Refund Policy</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<main class="policy-wrap">
+  <div class="policy-inner">
+
+    <section class="policy-section" id="terms">
+      <span class="section-tag">01</span>
+      <h2 class="section-title">Terms of Service</h2>
+
+      <div class="policy-block">
+        <h3>Agreement</h3>
+        <p>By accessing or purchasing from Solo Operator OS ("we," "us," "our"), you agree to these terms. Solo Operator OS is a trade name operated by its founder, doing business as Solo Operator OS, based in Hartford County, Connecticut.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Products &amp; Services</h3>
+        <p>Solo Operator OS offers digital products including Notion templates, AI-powered web tools, and subscription-based platform access. All products are delivered digitally. No physical goods are shipped.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>License &amp; Use</h3>
+        <p>When you purchase a digital product from Solo Operator OS, you receive a personal, non-transferable license to use it for your own business purposes. You may not:</p>
+        <ul>
+          <li>Resell, redistribute, or share purchased products with others</li>
+          <li>Claim ownership or authorship of our templates or tools</li>
+          <li>Use our products to create competing products for resale</li>
+          <li>Remove any branding, attribution, or copyright notices</li>
+        </ul>
+      </div>
+
+      <div class="policy-block">
+        <h3>AI Tools</h3>
+        <p>Our AI-powered tools use the Anthropic Claude API to generate content. Outputs are generated based on your inputs and are not reviewed by us before delivery. You are responsible for reviewing and using any AI-generated content appropriately. We do not guarantee the accuracy, completeness, or fitness of AI-generated outputs for any particular purpose.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Payments</h3>
+        <p>All payments are processed by Stripe or Gumroad. Solo Operator OS does not store or have access to your payment card information. Prices are listed in US dollars. Applicable taxes may be added at checkout depending on your location.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Subscriptions</h3>
+        <p>Subscription plans (Solo, Pro, Studio) renew automatically each month until cancelled. You may cancel at any time from your account settings. Cancellation takes effect at the end of the current billing period — you retain access until then.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Limitation of Liability</h3>
+        <p>Solo Operator OS is provided "as is." We are not liable for any indirect, incidental, or consequential damages arising from your use of our products or tools. Our total liability shall not exceed the amount you paid for the specific product or service in question.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Governing Law</h3>
+        <p>These terms are governed by the laws of the State of Connecticut, USA. Any disputes shall be resolved in the courts of Hartford County, Connecticut.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Changes to Terms</h3>
+        <p>We may update these terms at any time. Continued use of our platform after changes constitutes acceptance of the updated terms. We will update the "Last updated" date above when changes are made.</p>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="policy-section" id="privacy">
+      <span class="section-tag">02</span>
+      <h2 class="section-title">Privacy Policy</h2>
+
+      <div class="highlight-box">
+        <p>We keep this simple: we collect only what we need to run the platform, we don't sell your data, and we don't use third-party ad tracking.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>What We Collect</h3>
+        <p>We collect the following information when you use Solo Operator OS:</p>
+        <ul>
+          <li>Email address (when you sign up or make a purchase)</li>
+          <li>Payment information (processed by Stripe or Gumroad — we never see your card details)</li>
+          <li>Tool usage data (inputs you provide to our AI tools to generate outputs)</li>
+          <li>Basic analytics (page visits, general location by country — no personal tracking)</li>
+        </ul>
+      </div>
+
+      <div class="policy-block">
+        <h3>How We Use It</h3>
+        <p>We use your information to:</p>
+        <ul>
+          <li>Deliver your purchased products and grant platform access</li>
+          <li>Send transactional emails (receipts, access links, important updates)</li>
+          <li>Process payments and manage subscriptions</li>
+          <li>Improve our tools and products based on usage patterns</li>
+        </ul>
+      </div>
+
+      <div class="policy-block">
+        <h3>What We Don't Do</h3>
+        <ul>
+          <li>We do not sell your personal information to any third party</li>
+          <li>We do not use third-party advertising networks or tracking pixels</li>
+          <li>We do not send unsolicited marketing emails without your consent</li>
+          <li>We do not store your payment card information — ever</li>
+        </ul>
+      </div>
+
+      <div class="policy-block">
+        <h3>Third-Party Services</h3>
+        <p>We use the following third-party services to operate the platform:</p>
+        <ul>
+          <li>Stripe — payment processing</li>
+          <li>Gumroad — digital product delivery</li>
+          <li>Anthropic — AI content generation via Claude API</li>
+          <li>Netlify — website and tool hosting</li>
+          <li>Supabase — user authentication and data storage</li>
+        </ul>
+        <p>Each of these services has its own privacy policy governing how they handle your data.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Data Retention</h3>
+        <p>We retain your data for as long as your account is active or as needed to provide services. You may request deletion of your personal data at any time by emailing us at <a href="mailto:solooperatoros@proton.me" class="policy-email">solooperatoros@proton.me</a>.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Your Rights</h3>
+        <p>You have the right to access, correct, or delete the personal information we hold about you. To exercise these rights, contact us at <a href="mailto:solooperatoros@proton.me" class="policy-email">solooperatoros@proton.me</a>.</p>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="policy-section" id="refunds">
+      <span class="section-tag">03</span>
+      <h2 class="section-title">Refund Policy</h2>
+
+      <div class="highlight-box">
+        <p>We stand behind our products. If you're not satisfied within 7 days of purchase, we'll make it right.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Digital Products (Notion Templates)</h3>
+        <p>We offer a <strong>7-day money-back guarantee</strong> on all Notion template purchases. If you're unsatisfied for any reason within 7 days of your purchase date, contact us at <a href="mailto:solooperatoros@proton.me" class="policy-email">solooperatoros@proton.me</a> and we'll issue a full refund — no questions asked.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Subscriptions (Solo, Pro, Studio Plans)</h3>
+        <p>Monthly subscriptions may be cancelled at any time. If you cancel within 7 days of your first payment and haven't used the platform extensively, contact us for a refund. Renewals after the first billing cycle are non-refundable but you may cancel to prevent future charges.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>AI Tool Credits</h3>
+        <p>Consumed AI tool credits (generations used) are non-refundable as the service has been rendered. If you experience a technical issue that prevented proper delivery, contact us and we'll resolve it.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>How to Request a Refund</h3>
+        <p>Email us at <a href="mailto:solooperatoros@proton.me" class="policy-email">solooperatoros@proton.me</a> with:</p>
+        <ul>
+          <li>Your name and email address used at purchase</li>
+          <li>The product or plan you purchased</li>
+          <li>Your order ID or receipt number</li>
+          <li>Brief reason for the refund request</li>
+        </ul>
+        <p>We process refunds within 3–5 business days. Refunds are returned to the original payment method.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Payment Processing</h3>
+        <p>All payment data is handled by Stripe and Gumroad. Solo Operator OS never stores, sees, or has access to your credit card or banking information. Refunds are processed through the same platform you used to purchase.</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<div class="contact-band" id="contact">
+  <div class="contact-band-text">
+    <span class="contact-band-label">Questions?</span>
+    <p class="contact-band-title">Built to respond fast.<br>We actually reply.</p>
+  </div>
+  <a href="mailto:solooperatoros@proton.me" class="contact-band-email">solooperatoros@proton.me</a>
+</div>
+
+<footer>
+  <p class="footer-l">&copy; 2026 Solo Operator OS</p>
+  <p class="footer-logo">Solo Operator <span>OS</span></p>
+  <p class="footer-r"><a href="/" style="color:var(--dim);text-decoration:none;letter-spacing:0.1em;font-size:0.7rem;text-transform:uppercase;">&larr; Back to home</a></p>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const p=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
+  document.getElementById('progress').style.width=p+'%';
+});
+</script>
+</body>
+</html>
