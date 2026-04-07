@@ -256,7 +256,7 @@ nav{
   transition:opacity 0.55s cubic-bezier(.25,1,.5,1), transform 0.55s cubic-bezier(.25,1,.5,1), background 0.2s;
 }
 .p-table tbody tr.fired{opacity:1;transform:translateX(0);}
-.p-table tbody tr:hover{background:var(--off);}
+.p-table tbody tr:hover{background:var(--off);cursor:pointer;}
 .p-table td{padding:2rem 1.5rem;vertical-align:middle;}
 .p-num{
   font-family:'Cormorant Garamond',serif;
@@ -342,8 +342,6 @@ nav{
 .tier-btn:hover{background:var(--black);color:var(--white);border-color:var(--black);}
 .tier.featured .tier-btn{background:var(--accent);color:var(--white);border-color:var(--accent);}
 .tier.featured .tier-btn:hover{background:var(--accent2);}
-
-
 
 /* ── CLOSING ── */
 .closing{display:grid;grid-template-columns:1fr 1fr;min-height:70vh;}
@@ -599,7 +597,7 @@ footer{
 
   <table class="p-table">
     <tbody>
-      <tr data-reveal="row">
+      <tr data-reveal="row" style="cursor:pointer;" onclick="window.open('https://solooperatoros.gumroad.com/l/solo-operator-os','_blank')">
         <td class="p-num">01</td>
         <td class="p-cat">Digital Product</td>
         <td class="p-name">Solo Operator OS — Notion Template</td>
@@ -607,7 +605,7 @@ footer{
         <td class="p-price">$47 one-time</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row">
+      <tr data-reveal="row" style="cursor:pointer;" onclick="window.open('https://solooperatoros.gumroad.com/l/solo-operator-starter-kit','_blank')">
         <td class="p-num">02</td>
         <td class="p-cat">Digital Product</td>
         <td class="p-name">Solo Operator Starter Kit</td>
@@ -615,7 +613,7 @@ footer{
         <td class="p-price">$27 one-time</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row">
+      <tr data-reveal="row" style="cursor:pointer;" onclick="window.location.href='#pricing'">
         <td class="p-num">03</td>
         <td class="p-cat">Digital Product</td>
         <td class="p-name">AI Prompts Vault</td>
@@ -623,7 +621,7 @@ footer{
         <td class="p-price">$37 one-time</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row">
+      <tr data-reveal="row" style="cursor:pointer;" onclick="window.open('https://proposals.solooperatoros.com','_blank')">
         <td class="p-num">04</td>
         <td class="p-cat">AI Tool</td>
         <td class="p-name">Proposal Generator</td>
@@ -631,7 +629,7 @@ footer{
         <td class="p-price">$15 / month</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row">
+      <tr data-reveal="row" style="cursor:pointer;" onclick="window.open('https://outreach.solooperatoros.com','_blank')">
         <td class="p-num">05</td>
         <td class="p-cat">AI Tool</td>
         <td class="p-name">Cold Outreach Writer</td>
@@ -639,7 +637,7 @@ footer{
         <td class="p-price">$12 / month</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row">
+      <tr data-reveal="row" style="cursor:pointer;" onclick="window.open('https://invoices.solooperatoros.com','_blank')">
         <td class="p-num">06</td>
         <td class="p-cat">AI Tool</td>
         <td class="p-name">Invoice Generator</td>
@@ -647,7 +645,7 @@ footer{
         <td class="p-price">$9 / month</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row">
+      <tr data-reveal="row" style="cursor:pointer;" onclick="window.open('https://reports.solooperatoros.com','_blank')">
         <td class="p-num">07</td>
         <td class="p-cat">AI Tool</td>
         <td class="p-name">Client Report Builder</td>
@@ -655,7 +653,7 @@ footer{
         <td class="p-price">$12 / month</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row">
+      <tr data-reveal="row" style="cursor:pointer;" onclick="window.location.href='#pricing'">
         <td class="p-num">08</td>
         <td class="p-cat">Community</td>
         <td class="p-name">Newsletter + Community</td>
@@ -663,7 +661,7 @@ footer{
         <td class="p-price">Free — $15/mo</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row">
+      <tr data-reveal="row" style="cursor:pointer;" onclick="window.location.href='#pricing'">
         <td class="p-num">09</td>
         <td class="p-cat">Knowledge</td>
         <td class="p-name">Solo Operator Accelerator Course</td>
@@ -671,7 +669,7 @@ footer{
         <td class="p-price">$197 — $497</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row">
+      <tr data-reveal="row" style="cursor:pointer;" onclick="window.location.href='#pricing'">
         <td class="p-num">10</td>
         <td class="p-cat">Licensing</td>
         <td class="p-name">White Label Toolkit</td>
@@ -818,8 +816,6 @@ footer{
   </div>
 </section>
 
-<!-- EMAIL CAPTURE POPUP — see JS below -->
-
 <!-- CLOSING -->
 <section class="closing">
   <div class="closing-l">
@@ -863,7 +859,7 @@ footer{
 <footer>
   <p class="footer-l">© 2026 Solo Operator OS</p>
   <p class="footer-logo">Solo Operator <span>OS</span></p>
-  <p class="footer-r">All rights reserved &nbsp;·&nbsp; <a href="/policy" style="color:rgba(255,255,255,0.2);text-decoration:none;letter-spacing:0.2em;font-size:0.58rem;text-transform:uppercase;transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.6)'" onmouseout="this.style.color='rgba(255,255,255,0.2)'">Legal</a></p>
+  <p class="footer-r">All rights reserved</p>
 </footer>
 
 <script>
@@ -958,215 +954,6 @@ const stats=document.querySelectorAll('.c-stat[data-reveal="slide"]');
 stats.forEach((s,i)=>{
   s.style.transitionDelay=(i*0.1)+'s';
   io.observe(s);
-});
-</script>
-
-
-
-<!-- ── EMAIL POPUP ── -->
-<style>
-.ep-overlay{
-  position:fixed;inset:0;z-index:999;
-  background:rgba(12,12,11,0.82);
-  backdrop-filter:blur(6px);
-  display:flex;align-items:center;justify-content:center;
-  padding:1.5rem;
-  opacity:0;pointer-events:none;
-  transition:opacity 0.45s cubic-bezier(.25,1,.5,1);
-}
-.ep-overlay.open{opacity:1;pointer-events:all;}
-.ep-modal{
-  background:var(--white);
-  max-width:540px;width:100%;
-  position:relative;
-  transform:translateY(32px) scale(0.97);
-  transition:transform 0.45s cubic-bezier(.25,1,.5,1);
-}
-.ep-overlay.open .ep-modal{transform:translateY(0) scale(1);}
-.ep-top{
-  background:var(--black);
-  padding:2.5rem 2.5rem 2rem;
-  position:relative;
-}
-.ep-close{
-  position:absolute;top:1.25rem;right:1.25rem;
-  background:none;border:none;cursor:pointer;
-  color:rgba(255,255,255,0.3);font-size:1.1rem;
-  line-height:1;padding:0.25rem;
-  transition:color 0.2s;font-family:'Syne',sans-serif;
-}
-.ep-close:hover{color:rgba(255,255,255,0.7);}
-.ep-eyebrow{
-  font-size:0.58rem;letter-spacing:0.3em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:1.25rem;display:block;
-}
-.ep-headline{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(32px,4vw,46px);font-weight:300;
-  line-height:0.95;color:var(--white);
-  letter-spacing:-0.01em;
-}
-.ep-headline em{font-style:italic;color:rgba(255,255,255,0.35);}
-.ep-bottom{
-  padding:2rem 2.5rem 2.5rem;
-  border:1px solid var(--mid);border-top:none;
-}
-.ep-sub{
-  font-size:0.78rem;color:var(--dim);
-  line-height:1.8;margin-bottom:1.75rem;
-}
-.ep-row{
-  display:flex;gap:0;margin-bottom:0.6rem;
-}
-.ep-input{
-  flex:1;padding:0.9rem 1.1rem;
-  font-family:'Syne',sans-serif;font-size:0.75rem;
-  letter-spacing:0.04em;
-  background:var(--off);
-  border:1px solid var(--mid);border-right:none;
-  color:var(--black);outline:none;
-  transition:border-color 0.2s,background 0.2s;
-}
-.ep-input::placeholder{color:var(--faint);}
-.ep-input:focus{background:var(--white);border-color:var(--dim);}
-.ep-btn{
-  padding:0.9rem 1.5rem;
-  font-family:'Syne',sans-serif;font-size:0.62rem;
-  font-weight:500;letter-spacing:0.18em;text-transform:uppercase;
-  background:var(--accent);color:var(--white);
-  border:1px solid var(--accent);cursor:pointer;
-  transition:background 0.2s;white-space:nowrap;
-}
-.ep-btn:hover{background:var(--accent2);border-color:var(--accent2);}
-.ep-fine{
-  font-size:0.6rem;color:var(--faint);
-  letter-spacing:0.06em;line-height:1.6;
-}
-.ep-divider{
-  display:flex;align-items:center;gap:0.75rem;
-  margin-bottom:1.25rem;
-}
-.ep-divider-line{flex:1;height:1px;background:var(--mid);}
-.ep-divider-text{
-  font-size:0.6rem;letter-spacing:0.15em;
-  text-transform:uppercase;color:var(--faint);
-  white-space:nowrap;
-}
-.ep-success{display:none;}
-.ep-success-inner{
-  text-align:center;padding:1.5rem 0 0.5rem;
-}
-.ep-success-num{
-  font-family:'Cormorant Garamond',serif;
-  font-size:3.5rem;font-weight:300;
-  color:var(--accent);line-height:1;
-  margin-bottom:0.5rem;
-}
-.ep-success-msg{
-  font-size:0.75rem;color:var(--dim);
-  letter-spacing:0.1em;text-transform:uppercase;
-  line-height:1.7;
-}
-.ep-skip{
-  display:block;text-align:center;
-  font-size:0.6rem;color:var(--faint);
-  letter-spacing:0.12em;text-transform:uppercase;
-  margin-top:1rem;cursor:pointer;
-  transition:color 0.2s;background:none;border:none;
-  font-family:'Syne',sans-serif;width:100%;
-}
-.ep-skip:hover{color:var(--dim);}
-@media(max-width:480px){
-  .ep-top{padding:2rem 1.5rem 1.5rem;}
-  .ep-bottom{padding:1.5rem 1.5rem 2rem;}
-  .ep-row{flex-direction:column;}
-  .ep-input{border-right:1px solid var(--mid);border-bottom:none;}
-  .ep-btn{padding:0.9rem;}
-}
-</style>
-
-<div class="ep-overlay" id="epOverlay" onclick="handleOverlayClick(event)">
-  <div class="ep-modal" id="epModal">
-    <div class="ep-top">
-      <button class="ep-close" onclick="closePopup()" aria-label="Close">✕</button>
-      <span class="ep-eyebrow">Early Access</span>
-      <h2 class="ep-headline">The platform<br><em>is almost open.</em></h2>
-    </div>
-    <div class="ep-bottom">
-      <p class="ep-sub">Full platform access, subscriptions, and tools are launching soon. One email gets you first in — before the price goes up.</p>
-      <div id="epFormWrap">
-        <div class="ep-row">
-          <input type="email" class="ep-input" id="epEmail" placeholder="your@email.com">
-          <button class="ep-btn" onclick="handlePopupSubmit()">Notify Me</button>
-        </div>
-        <p class="ep-fine">No spam. No pitch. One email when access opens.</p>
-        <div class="ep-divider" style="margin-top:1.25rem;">
-          <div class="ep-divider-line"></div>
-          <span class="ep-divider-text">or</span>
-          <div class="ep-divider-line"></div>
-        </div>
-        <button class="ep-skip" onclick="closePopup()">I'll check back later</button>
-      </div>
-      <div class="ep-success" id="epSuccess">
-        <div class="ep-success-inner">
-          <p class="ep-success-num">✓</p>
-          <p class="ep-success-msg">You're on the list.<br>We'll be in touch.</p>
-        </div>
-        <button class="ep-skip" onclick="closePopup()">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-/* ── EMAIL POPUP ── */
-(function(){
-  const STORAGE_KEY='so_popup_seen';
-  const EMAIL_KEY='so_emails';
-  const DELAY=8000;
-
-  function alreadySeen(){
-    return localStorage.getItem(STORAGE_KEY)==='1';
-  }
-
-  function openPopup(){
-    if(alreadySeen())return;
-    document.getElementById('epOverlay').classList.add('open');
-    document.body.style.overflow='hidden';
-  }
-
-  setTimeout(openPopup, DELAY);
-})();
-
-function closePopup(){
-  const overlay=document.getElementById('epOverlay');
-  overlay.classList.remove('open');
-  document.body.style.overflow='';
-  localStorage.setItem('so_popup_seen','1');
-}
-
-function handleOverlayClick(e){
-  if(e.target===document.getElementById('epOverlay'))closePopup();
-}
-
-function handlePopupSubmit(){
-  const email=document.getElementById('epEmail').value.trim();
-  if(!email||!email.includes('@'))return;
-  const btn=document.querySelector('.ep-btn');
-  btn.textContent='Saving...';
-  btn.disabled=true;
-  const existing=JSON.parse(localStorage.getItem('so_emails')||'[]');
-  if(!existing.includes(email)){existing.push(email);localStorage.setItem('so_emails',JSON.stringify(existing));}
-  setTimeout(()=>{
-    document.getElementById('epFormWrap').style.display='none';
-    document.getElementById('epSuccess').style.display='block';
-    localStorage.setItem('so_popup_seen','1');
-    setTimeout(closePopup,2800);
-  },700);
-}
-
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape')closePopup();
 });
 </script>
 </body>
