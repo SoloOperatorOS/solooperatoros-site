@@ -470,6 +470,48 @@ footer{
 .tool-link-arrow{display:inline-block;transition:transform 0.2s;}
 .tool-link:hover .tool-link-arrow{transform:translateX(4px);}
 
+
+/* ── COMING SOON ── */
+.cs-badge{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  font-size:0.48rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;
+  color:#b8965a;border:1px solid rgba(184,150,90,0.35);
+  padding:0.25rem 0.6rem;margin-left:0.75rem;
+  vertical-align:middle;position:relative;top:-2px;
+}
+.cs-badge::before{
+  content:'';width:4px;height:4px;border-radius:50%;
+  background:#b8965a;animation:pulse 2s ease infinite;
+}
+.p-table tbody tr.coming-soon{
+  opacity:0.5;cursor:default !important;pointer-events:none;
+}
+.p-table tbody tr.coming-soon:hover{background:transparent;}
+.p-table tbody tr.coming-soon .p-arrow{color:transparent;}
+.p-table tbody tr.coming-soon .p-name::after{
+  content:' — Coming Soon';
+  font-size:0.65rem;font-weight:400;font-style:italic;
+  color:var(--faint);letter-spacing:0.04em;
+}
+.tier.beta{position:relative;overflow:hidden;}
+.tier.beta::before{
+  content:'Soon';
+  position:absolute;top:1.4rem;right:-1.6rem;
+  background:#b8965a;color:#0c0c0b;
+  font-family:'Syne',sans-serif;
+  font-size:0.45rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+  padding:0.3rem 2rem;
+  transform:rotate(45deg);
+}
+.tier.beta .tier-btn{
+  opacity:0.4;pointer-events:none;cursor:not-allowed;
+}
+.tier.beta .tier-name::after{
+  content:' — Coming Soon';
+  display:block;font-size:0.45rem;letter-spacing:0.15em;
+  color:#b8965a;margin-top:0.25rem;font-style:italic;
+}
+
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
   .hero-main{grid-template-columns:1fr;}
@@ -605,7 +647,7 @@ footer{
 
   <table class="p-table">
     <tbody>
-      <tr data-reveal="row" style="cursor:pointer;" onclick="window.open('https://solooperatoros.gumroad.com/l/solo-operator-os','_blank')">
+      <tr data-reveal="row">
         <td class="p-num">01</td>
         <td class="p-cat">Digital Product</td>
         <td class="p-name">Solo Operator OS — Notion Template</td>
@@ -613,7 +655,7 @@ footer{
         <td class="p-price">$47 one-time</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row" style="cursor:pointer;" onclick="window.open('https://solooperatoros.gumroad.com/l/solo-operator-starter-kit','_blank')">
+      <tr data-reveal="row">
         <td class="p-num">02</td>
         <td class="p-cat">Digital Product</td>
         <td class="p-name">Solo Operator Starter Kit</td>
@@ -621,15 +663,15 @@ footer{
         <td class="p-price">$27 one-time</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row" style="cursor:pointer;" onclick="window.open('https://prompts.solooperatoros.com','_blank')">
+      <tr data-reveal="row">
         <td class="p-num">03</td>
-        <td class="p-cat">AI Tool</td>
-        <td class="p-name">AI Prompt Generator</td>
+        <td class="p-cat">Digital Product</td>
+        <td class="p-name">AI Prompts Vault</td>
         <td class="p-desc">500+ tested prompts for running your entire business with AI. Claude does the work. You collect the income.</td>
         <td class="p-price">$37 one-time</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row" style="cursor:pointer;" onclick="window.open('https://proposals.solooperatoros.com','_blank')">
+      <tr data-reveal="row">
         <td class="p-num">04</td>
         <td class="p-cat">AI Tool</td>
         <td class="p-name">Proposal Generator</td>
@@ -637,7 +679,7 @@ footer{
         <td class="p-price">$15 / month</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row" style="cursor:pointer;" onclick="window.open('https://outreach.solooperatoros.com','_blank')">
+      <tr data-reveal="row">
         <td class="p-num">05</td>
         <td class="p-cat">AI Tool</td>
         <td class="p-name">Cold Outreach Writer</td>
@@ -645,7 +687,7 @@ footer{
         <td class="p-price">$12 / month</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row" style="cursor:pointer;" onclick="window.open('https://invoices.solooperatoros.com','_blank')">
+      <tr data-reveal="row">
         <td class="p-num">06</td>
         <td class="p-cat">AI Tool</td>
         <td class="p-name">Invoice Generator</td>
@@ -653,7 +695,7 @@ footer{
         <td class="p-price">$9 / month</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row" style="cursor:pointer;" onclick="window.open('https://reports.solooperatoros.com','_blank')">
+      <tr data-reveal="row">
         <td class="p-num">07</td>
         <td class="p-cat">AI Tool</td>
         <td class="p-name">Client Report Builder</td>
@@ -661,7 +703,7 @@ footer{
         <td class="p-price">$12 / month</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row" style="cursor:pointer;" onclick="window.location.href='#pricing'">
+      <tr data-reveal="row" class="coming-soon">
         <td class="p-num">08</td>
         <td class="p-cat">Community</td>
         <td class="p-name">Newsletter + Community</td>
@@ -669,7 +711,7 @@ footer{
         <td class="p-price">Free — $15/mo</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row" style="cursor:pointer;" onclick="window.location.href='#pricing'">
+      <tr data-reveal="row" class="coming-soon">
         <td class="p-num">09</td>
         <td class="p-cat">Knowledge</td>
         <td class="p-name">Solo Operator Accelerator Course</td>
@@ -677,7 +719,7 @@ footer{
         <td class="p-price">$197 — $497</td>
         <td class="p-arrow">→</td>
       </tr>
-      <tr data-reveal="row" style="cursor:pointer;" onclick="window.location.href='#pricing'">
+      <tr data-reveal="row" class="coming-soon">
         <td class="p-num">10</td>
         <td class="p-cat">Licensing</td>
         <td class="p-name">White Label Toolkit</td>
@@ -772,7 +814,7 @@ footer{
 <section class="pricing" id="pricing">
   <div class="pricing-inner">
     <div>
-      <p class="s-label">// Access Tiers</p>
+      <p class="s-label">// Access Tiers &nbsp;<span class="cs-badge">Beta</span></p>
       <h2 class="s-title">One brand.<br><strong>Every level.</strong></h2>
     </div>
     <div class="tier-grid">
@@ -803,7 +845,7 @@ footer{
         </ul>
         <a href="#" class="tier-btn">Start Solo</a>
       </div>
-      <div class="tier" data-reveal="tier">
+      <div class="tier beta" data-reveal="tier">
         <p class="tier-name">Pro</p>
         <p class="tier-price">$49</p>
         <p class="tier-period">per month</p>
@@ -818,7 +860,7 @@ footer{
         </ul>
         <a href="#" class="tier-btn">Go Pro</a>
       </div>
-      <div class="tier" data-reveal="tier">
+      <div class="tier beta" data-reveal="tier">
         <p class="tier-name">Studio</p>
         <p class="tier-price">$149</p>
         <p class="tier-period">per month</p>
@@ -1007,15 +1049,7 @@ stats.forEach((s,i)=>{
 .ep-success-msg{font-size:0.75rem;color:var(--dim);letter-spacing:0.1em;text-transform:uppercase;line-height:1.7;}
 .ep-skip{display:block;text-align:center;font-size:0.6rem;color:var(--faint);letter-spacing:0.12em;text-transform:uppercase;margin-top:1rem;cursor:pointer;transition:color 0.2s;background:none;border:none;font-family:'Syne',sans-serif;width:100%;}
 .ep-skip:hover{color:var(--dim);}
-@media(max-width:480px){
-  .ep-top{padding:2rem 1.5rem 1.5rem;}
-  .ep-bottom{padding:1.5rem 1.5rem 2rem;}
-  .ep-row{flex-direction:column;}
-  .ep-input{border-right:1px solid var(--mid);border-bottom:none;}
-  .ep-btn{padding:0.9rem;}
-}
 </style>
-
 <div class="ep-overlay" id="epOverlay" onclick="handleOverlayClick(event)">
   <div class="ep-modal" id="epModal">
     <div class="ep-top">
@@ -1048,7 +1082,6 @@ stats.forEach((s,i)=>{
     </div>
   </div>
 </div>
-
 <script>
 (function(){
   const DELAY=8000;
@@ -1060,23 +1093,19 @@ stats.forEach((s,i)=>{
   }
   setTimeout(openPopup,DELAY);
 })();
-
 function closePopup(){
   document.getElementById('epOverlay').classList.remove('open');
   document.body.style.overflow='';
   localStorage.setItem('so_popup_seen','1');
 }
-
 function handleOverlayClick(e){
   if(e.target===document.getElementById('epOverlay'))closePopup();
 }
-
 function handlePopupSubmit(){
   const email=document.getElementById('epEmail').value.trim();
   if(!email||!email.includes('@'))return;
   const btn=document.querySelector('.ep-btn');
-  btn.textContent='Saving...';
-  btn.disabled=true;
+  btn.textContent='Saving...';btn.disabled=true;
   const existing=JSON.parse(localStorage.getItem('so_emails')||'[]');
   if(!existing.includes(email)){existing.push(email);localStorage.setItem('so_emails',JSON.stringify(existing));}
   setTimeout(()=>{
@@ -1086,10 +1115,7 @@ function handlePopupSubmit(){
     setTimeout(closePopup,2800);
   },700);
 }
-
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape')closePopup();
-});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closePopup();});
 </script>
 </body>
 </html>
