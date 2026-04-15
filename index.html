@@ -471,7 +471,7 @@ footer{
 .tool-link:hover .tool-link-arrow{transform:translateX(4px);}
 
 
-/* ── COMING SOON ── */
+/* ── COMING SOON / BETA ── */
 .cs-badge{
   display:inline-flex;align-items:center;gap:0.4rem;
   font-size:0.48rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;
@@ -481,36 +481,55 @@ footer{
 }
 .cs-badge::before{
   content:'';width:4px;height:4px;border-radius:50%;
-  background:#b8965a;animation:pulse 2s ease infinite;
+  background:#b8965a;animation:pulse 2s ease infinite;flex-shrink:0;
 }
 .p-table tbody tr.coming-soon{
-  opacity:0.5;cursor:default !important;pointer-events:none;
+  opacity:0.42;cursor:default !important;pointer-events:none;
 }
 .p-table tbody tr.coming-soon:hover{background:transparent;}
 .p-table tbody tr.coming-soon .p-arrow{color:transparent;}
-.p-table tbody tr.coming-soon .p-name::after{
-  content:' — Coming Soon';
-  font-size:0.65rem;font-weight:400;font-style:italic;
-  color:var(--faint);letter-spacing:0.04em;
+.p-table tbody tr.coming-soon .p-price{color:var(--faint);}
+.coming-soon-label{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  font-size:0.48rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;
+  color:#b8965a;border:1px solid rgba(184,150,90,0.3);
+  padding:0.2rem 0.55rem;margin-left:0.6rem;
+  vertical-align:middle;position:relative;top:-3px;
 }
-.tier.beta{position:relative;overflow:hidden;}
+.coming-soon-label::before{
+  content:'';width:4px;height:4px;border-radius:50%;
+  background:#b8965a;flex-shrink:0;
+}
+.tier.beta{
+  position:relative;overflow:hidden;
+  border:1px solid rgba(184,150,90,0.3) !important;
+}
 .tier.beta::before{
-  content:'Soon';
-  position:absolute;top:1.4rem;right:-1.6rem;
+  content:'Coming Soon';
+  position:absolute;
+  top:22px;right:-32px;
+  width:140px;text-align:center;
   background:#b8965a;color:#0c0c0b;
   font-family:'Syne',sans-serif;
-  font-size:0.45rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
-  padding:0.3rem 2rem;
+  font-size:0.4rem;font-weight:700;letter-spacing:0.18em;
+  text-transform:uppercase;padding:0.3rem 0;
   transform:rotate(45deg);
+  z-index:2;
+  box-shadow:0 1px 4px rgba(0,0,0,0.15);
 }
 .tier.beta .tier-btn{
-  opacity:0.4;pointer-events:none;cursor:not-allowed;
+  background:transparent !important;
+  color:var(--faint) !important;
+  border:1px solid var(--mid) !important;
+  pointer-events:none;cursor:not-allowed;
 }
-.tier.beta .tier-name::after{
-  content:' — Coming Soon';
-  display:block;font-size:0.45rem;letter-spacing:0.15em;
-  color:#b8965a;margin-top:0.25rem;font-style:italic;
+.tier.beta .tier-price{
+  color:var(--faint) !important;
+  opacity:0.6;
 }
+.tier.featured.beta .tier-price{color:rgba(255,255,255,0.3) !important;}
+.tier.beta .tier-period{opacity:0.5;}
+.tier.featured.beta .tier-name{color:rgba(255,255,255,0.4) !important;}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
@@ -706,7 +725,7 @@ footer{
       <tr data-reveal="row" class="coming-soon">
         <td class="p-num">08</td>
         <td class="p-cat">Community</td>
-        <td class="p-name">Newsletter + Community</td>
+        <td class="p-name">Newsletter + Community<span class="coming-soon-label">Coming Soon</span></td>
         <td class="p-desc">Weekly systems, strategies, income breakdowns. Private circle of operators building together. Accountability, feedback, live Q&As.</td>
         <td class="p-price">Free — $15/mo</td>
         <td class="p-arrow">→</td>
@@ -714,7 +733,7 @@ footer{
       <tr data-reveal="row" class="coming-soon">
         <td class="p-num">09</td>
         <td class="p-cat">Knowledge</td>
-        <td class="p-name">Solo Operator Accelerator Course</td>
+        <td class="p-name">Solo Operator Accelerator Course<span class="coming-soon-label">Coming Soon</span></td>
         <td class="p-desc">The full playbook for building your first three income streams. Step by step. Built by someone living it.</td>
         <td class="p-price">$197 — $497</td>
         <td class="p-arrow">→</td>
@@ -722,7 +741,7 @@ footer{
       <tr data-reveal="row" class="coming-soon">
         <td class="p-num">10</td>
         <td class="p-cat">Licensing</td>
-        <td class="p-name">White Label Toolkit</td>
+        <td class="p-name">White Label Toolkit<span class="coming-soon-label">Coming Soon</span></td>
         <td class="p-desc">Agencies license the full PWA toolkit to offer clients under their own brand. Recurring B2B revenue on autopilot.</td>
         <td class="p-price">$299 / month</td>
         <td class="p-arrow">→</td>
@@ -814,11 +833,11 @@ footer{
 <section class="pricing" id="pricing">
   <div class="pricing-inner">
     <div>
-      <p class="s-label">// Access Tiers &nbsp;<span class="cs-badge">Beta</span></p>
+      <p class="s-label">// Access Tiers &nbsp;<span class="cs-badge">Beta — Coming Soon</span></p>
       <h2 class="s-title">One brand.<br><strong>Every level.</strong></h2>
     </div>
     <div class="tier-grid">
-      <div class="tier" data-reveal="tier">
+      <div class="tier beta" data-reveal="tier">
         <p class="tier-name">Free</p>
         <p class="tier-price">$0</p>
         <p class="tier-period">forever</p>
@@ -831,7 +850,7 @@ footer{
         </ul>
         <a href="#" class="tier-btn">Get Started</a>
       </div>
-      <div class="tier featured" data-reveal="tier">
+      <div class="tier featured beta" data-reveal="tier">
         <p class="tier-name">Solo — Most Popular</p>
         <p class="tier-price">$19</p>
         <p class="tier-period">per month</p>
@@ -1086,34 +1105,18 @@ stats.forEach((s,i)=>{
 (function(){
   const DELAY=8000;
   function alreadySeen(){return localStorage.getItem('so_popup_seen')==='1';}
-  function openPopup(){
-    if(alreadySeen())return;
-    document.getElementById('epOverlay').classList.add('open');
-    document.body.style.overflow='hidden';
-  }
+  function openPopup(){if(alreadySeen())return;document.getElementById('epOverlay').classList.add('open');document.body.style.overflow='hidden';}
   setTimeout(openPopup,DELAY);
 })();
-function closePopup(){
-  document.getElementById('epOverlay').classList.remove('open');
-  document.body.style.overflow='';
-  localStorage.setItem('so_popup_seen','1');
-}
-function handleOverlayClick(e){
-  if(e.target===document.getElementById('epOverlay'))closePopup();
-}
+function closePopup(){document.getElementById('epOverlay').classList.remove('open');document.body.style.overflow='';localStorage.setItem('so_popup_seen','1');}
+function handleOverlayClick(e){if(e.target===document.getElementById('epOverlay'))closePopup();}
 function handlePopupSubmit(){
   const email=document.getElementById('epEmail').value.trim();
   if(!email||!email.includes('@'))return;
-  const btn=document.querySelector('.ep-btn');
-  btn.textContent='Saving...';btn.disabled=true;
+  const btn=document.querySelector('.ep-btn');btn.textContent='Saving...';btn.disabled=true;
   const existing=JSON.parse(localStorage.getItem('so_emails')||'[]');
   if(!existing.includes(email)){existing.push(email);localStorage.setItem('so_emails',JSON.stringify(existing));}
-  setTimeout(()=>{
-    document.getElementById('epFormWrap').style.display='none';
-    document.getElementById('epSuccess').style.display='block';
-    localStorage.setItem('so_popup_seen','1');
-    setTimeout(closePopup,2800);
-  },700);
+  setTimeout(()=>{document.getElementById('epFormWrap').style.display='none';document.getElementById('epSuccess').style.display='block';localStorage.setItem('so_popup_seen','1');setTimeout(closePopup,2800);},700);
 }
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closePopup();});
 </script>
