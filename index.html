@@ -554,12 +554,6 @@ footer{
 </head>
 <body>
 
-<!-- NETLIFY FORM HANDLER -->
-<form name="early-access" netlify netlify-honeypot="bot-field" hidden>
-  <input type="email" name="email">
-  <input name="bot-field">
-</form>
-
 <!-- SCROLL PROGRESS -->
 <div class="progress" id="progress"></div>
 
@@ -1121,15 +1115,20 @@ function handlePopupSubmit(){
   if(!email||!email.includes('@'))return;
   const btn=document.querySelector('.ep-btn');
   btn.textContent='Saving...';btn.disabled=true;
-  fetch('/',{
+  fetch('https://formspree.io/f/mlgajnjj',{
     method:'POST',
-    headers:{'Content-Type':'application/x-www-form-urlencoded'},
-    body:new URLSearchParams({'form-name':'early-access','email':email}).toString()
-  }).then(()=>{
-    document.getElementById('epFormWrap').style.display='none';
-    document.getElementById('epSuccess').style.display='block';
-    localStorage.setItem('so_popup_seen','1');
-    setTimeout(closePopup,2800);
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({'email':email})
+  }).then(res=>{
+    if(res.ok){
+      document.getElementById('epFormWrap').style.display='none';
+      document.getElementById('epSuccess').style.display='block';
+      localStorage.setItem('so_popup_seen','1');
+      setTimeout(closePopup,2800);
+    } else {
+      btn.textContent='Notify Me';
+      btn.disabled=false;
+    }
   }).catch(()=>{
     btn.textContent='Notify Me';
     btn.disabled=false;
